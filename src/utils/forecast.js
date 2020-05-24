@@ -19,7 +19,12 @@ else if(body.error){
 }
 else{
 
-callback(undefined,body.current.weather_descriptions[0])
+   dataf={
+  forecast: body.current.weather_descriptions[0] ,
+  humidity: body.current.humidity, 
+
+   } 
+callback(undefined,dataf)
 
 }
 

@@ -77,7 +77,7 @@ app.get("/weather",(req,res)=>{
   }
   
   
-  forecast(longitude, latitude, (error, dataf) => {
+  forecast(longitude, latitude, (error,{forecast,humidity}={ }) => {
     
     if(error)
     {
@@ -91,7 +91,8 @@ app.get("/weather",(req,res)=>{
     Location: req.query.address,
     Latitude:latitude,
     Longitude:longitude,
-    Forecast:dataf 
+    Forecast:forecast,
+    Humidity:humidity,     
    })
 
   })
