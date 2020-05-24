@@ -11,6 +11,7 @@ const partialspath= path.join(__dirname,"../template/partials")
 
 const app=express()
 
+const port = process.env.PORT || 3000
 
 //Define Paths For express configuration
 const publicdirectory=path.join(__dirname,"../public")
@@ -181,14 +182,9 @@ app.get("*",(req,res)=>{
 
 })
 
+app.listen(port, ()=>{
 
-
-
-
-
-app.listen(3000 , ()=>{
-
-console.log("Server Is UP On port 3000")
+console.log("Server Is UP On port 3000"+port)
 
 })
 
